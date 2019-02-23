@@ -26,7 +26,7 @@ export default {
   mounted() {
     axios.get("https://www.reddit.com/r/aww.json?raw_json=1").then(response => {
       //console.log(response.data.data.children);
-      this.posts = response.data.data.children;
+      this.posts = response.data.data.children.slice(0, 8);
     });
   },
   data() {

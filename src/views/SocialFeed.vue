@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <Posts/>
+    <ion-scroll>
+      <Posts/>
+    </ion-scroll>
   </div>
 </template>
 
 <script>
-import Posts from '@/components/Posts.vue'
+import Posts from "@/components/Posts.vue";
 
 export default {
-  name: 'SocialFeed',
+  name: "SocialFeed",
   components: {
     Posts
   }
 };
-
 </script>
