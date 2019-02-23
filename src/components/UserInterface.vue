@@ -2,11 +2,14 @@
   <div>
     <ion-toolbar class="ToolbarVerde">
       <ion-buttons slot="secondary">
-        <ion-button @click="testClick">
-          <ion-icon slot="icon-only" name="aperture"></ion-icon>
+        <ion-button href='/'>
+          <ion-icon slot="icon-only" name="home"></ion-icon>
         </ion-button>
         <ion-button @click="testClick">
-          <ion-icon slot="icon-only" name="photos"></ion-icon>
+          <ion-icon slot="icon-only" name="business"></ion-icon>
+        </ion-button>
+        <ion-button href='/ar-paper'>
+          <ion-icon slot="icon-only" name="aperture"></ion-icon>
         </ion-button>
         <ion-button @click="testClick">
           <ion-icon slot="icon-only" name="cube"></ion-icon>
