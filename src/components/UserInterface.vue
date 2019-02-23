@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ion-toolbar>
+    <ion-toolbar class="ToolbarVerde">
       <ion-buttons slot="secondary">
         <ion-button @click="testClick">
           <ion-icon slot="icon-only" name="aperture"></ion-icon>
@@ -13,7 +13,7 @@
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="primary">
-        <ion-button  @click="testClick" color="secondary">
+        <ion-button @click="testClick" color="secondary">
           <ion-icon slot="icon-only" name="more"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -28,11 +28,21 @@ export default {
   props: {},
   methods: {
     testClick() {
-      alert('BUTTON CLICKED');
+      alert("BUTTON CLICKED");
       //console.log(imageSrc);
       //this.$router.push({ name: "post", params: { imageSrc } });
     }
   }
 };
 </script>
+
+<style>
+.ToolbarVerde {
+  --padding-top: 0px !important;
+  --padding-start: 0px !important;
+  --padding-right: 0px !important;
+  --padding-end: 0px !important;
+}
+</style>
+
 

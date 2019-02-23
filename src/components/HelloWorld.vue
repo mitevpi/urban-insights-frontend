@@ -54,6 +54,9 @@
         <a href="https://github.com/" target="_blank" rel="noopener">Mikkel Steenberg</a>
       </li>
       <li>
+        <a href="https://github.com/" target="_blank" rel="noopener">Matthias Levinsen</a>
+      </li>
+      <li>
         <a href="https://github.com/mitevpi" target="_blank" rel="noopener">Petr Mitev</a>
       </li>
     </ul>
