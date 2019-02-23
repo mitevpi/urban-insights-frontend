@@ -34,11 +34,6 @@ export default {
   bottom: 0%;
   height: 40px;
   position: fixed;
-  margin: 0;
-  padding: 0%;
-  float: left;
-  padding-right: 0px!important;
-  padding-left: 0px!important;
 }
 
 #nav a.router-link-exact-active {

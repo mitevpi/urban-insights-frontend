@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <h1>This is the page for showing the social feed.</h1>
+  <div class="home">
+    <Posts/>
   </div>
 </template>
 
 <script>
+import Posts from '@/components/Posts.vue'
+
 export default {
-  name: "SocialFeed",
-  components: {}
+  name: 'SocialFeed',
+  components: {
+    Posts
+  }
 };
+
 </script>
