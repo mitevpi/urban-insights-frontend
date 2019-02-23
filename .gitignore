@@ -192,3 +192,4 @@ typings/
 # vue
 dist
 /dist
+dist/
