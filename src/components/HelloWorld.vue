@@ -2,13 +2,13 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,
-      <br>check out the
+      For documentation,
+      <br>check out the project on 
       <a
         href="https://github.com/mitevpi/urban-insights-frontend"
         target="_blank"
         rel="noopener"
-      >project documentation on GitHub</a>.
+      >GitHub</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
