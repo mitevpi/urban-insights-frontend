@@ -188,3 +188,7 @@ typings/
 .env
 *.rvt
 .vscode/launch.json
+
+# vue
+dist
+/dist

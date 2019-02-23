@@ -4,6 +4,7 @@
       <ion-buttons slot="secondary">
         <ion-button href='/'>
           <ion-icon slot="icon-only" name="home"></ion-icon>
+          <!-- <ion-icon src="/public/img/icons/home.svg"></ion-icon> -->
         </ion-button>
         <ion-button href='/ar-site'>
           <ion-icon slot="icon-only" name="business"></ion-icon>
