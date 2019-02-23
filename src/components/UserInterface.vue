@@ -5,14 +5,17 @@
         <ion-button href='/'>
           <ion-icon slot="icon-only" name="home"></ion-icon>
         </ion-button>
-        <ion-button @click="testClick">
+        <ion-button href='/ar-site'>
           <ion-icon slot="icon-only" name="business"></ion-icon>
         </ion-button>
         <ion-button href='/ar-paper'>
           <ion-icon slot="icon-only" name="aperture"></ion-icon>
         </ion-button>
-        <ion-button @click="testClick">
+        <ion-button href='/model-view'>
           <ion-icon slot="icon-only" name="cube"></ion-icon>
+        </ion-button>
+        <ion-button href='/social-feed'>
+          <ion-icon slot="icon-only" name="paper"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="primary">
