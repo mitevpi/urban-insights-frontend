@@ -1,23 +1,38 @@
 <template>
   <div>
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
+      <ion-buttons slot="secondary">
+        <ion-button @click="testClick">
+          <ion-icon slot="icon-only" name="aperture"></ion-icon>
+        </ion-button>
+        <ion-button @click="testClick">
+          <ion-icon slot="icon-only" name="photos"></ion-icon>
+        </ion-button>
+        <ion-button @click="testClick">
+          <ion-icon slot="icon-only" name="cube"></ion-icon>
+        </ion-button>
       </ion-buttons>
-      <ion-title>Back Button</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button  @click="testClick" color="secondary">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <!-- <ion-title>Nav</ion-title> -->
     </ion-toolbar>
-    <!-- <ion-header>
-      <ion-toolbar>
-        <ion-title>Urban Insights</ion-title>
-      </ion-toolbar>
-    </ion-header>-->
   </div>
 </template>
 
 <script>
 export default {
   name: "UserInterface",
-  props: {}
+  props: {},
+  methods: {
+    testClick() {
+      alert('BUTTON CLICKED');
+      //console.log(imageSrc);
+      //this.$router.push({ name: "post", params: { imageSrc } });
+    }
+  }
 };
 </script>
 

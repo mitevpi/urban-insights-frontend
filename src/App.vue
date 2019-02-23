@@ -1,12 +1,27 @@
 <template>
   <div id="app">
+
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <UserInterface></UserInterface>
+
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>-->
     </div>
-    <router-view />
+    <router-view/>
   </div>
 </template>
+
+<script>
+import UserInterface from "@/components/UserInterface.vue";
+
+export default {
+  name: "app",
+  components: {
+    UserInterface
+  }
+};
+</script>
+
 
 <style>
 #app {
@@ -17,12 +32,10 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  width:100%;
+  bottom: 0%;
+  height: 40px;
+  position: fixed;
 }
 
 #nav a.router-link-exact-active {
