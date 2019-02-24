@@ -34,7 +34,7 @@
           max="23"
           color="danger"
           pin="true"
-          @click="getSliderValue"
+          @click="getSliderValue(); getSunVector();"
           ref="myid"
           @change="timeInput = $event.target.value"
         >
@@ -47,15 +47,19 @@
         placeholder="Address"
         @input="address = $event.target.value"
       ></ion-input>
-      
     </ion-list>
-    <ion-item class="ModelSelectStyleParent" v-if="this.showControls" >
-        <ion-label>Models</ion-label>
-        <ion-select @click="testClick" class="ModelSelectStyle" placeholder="Select Model" :value="modelPick">
-          <ion-select-option @click="testClick" value="3d/testHouseRotate.obj">House</ion-select-option>
-          <ion-select-option value="3d/SANF_output_rhino_flipped.obj">City</ion-select-option>
-        </ion-select>
-      </ion-item>
+    <!-- <ion-item class="ModelSelectStyleParent" v-if="this.showControls">
+      <ion-label>Models</ion-label>
+      <ion-select
+        @click="testClick"
+        class="ModelSelectStyle"
+        placeholder="Select Model"
+        :value="modelPick"
+      >
+        <ion-select-option @click="testClick" value="3d/testHouseRotate.obj">House</ion-select-option>
+        <ion-select-option value="3d/SANF_output_rhino_flipped.obj">City</ion-select-option>
+      </ion-select>
+    </ion-item> -->
   </div>
 </template>
 
@@ -68,11 +72,10 @@ export default {
       showControls: false,
       timeInput: 0,
       address: "",
-      modelPick:"",
+      modelPick: ""
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     testClick() {
       //alert("BUTTON CLICKED");
@@ -104,6 +107,21 @@ export default {
 
       console.log(vals);
       this.timeInput = parseInt(vals[0]);
+    },
+    getSunVector() {
+      axios({
+        method: "get",
+        url: "http://127.0.0.1:5000/getSunVector",
+        headers: {},
+        data: {
+          address: this.address,
+          month: 6,
+          day: 21,
+          hour: this.timeInput
+        }
+      }).then(response => {
+      console.log(response);
+    });
     }
   }
 };
