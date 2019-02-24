@@ -25,12 +25,15 @@
       </ion-buttons>
     </ion-toolbar>
     <ion-list class="ControlVisible" v-if="this.showControls === true">
+      <!--<ion-input type="date" :value="timeInput" @input="timeInput = $event.target.value"></ion-input>-->
       <ion-item class="SliderStyle">
-        <ion-range v-model="timeInput" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid" @change="testClick">
+        <ion-range :value="timeInput" value="8" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid"
+                   @change="timeInput = $event.target.value">
           <ion-icon size="small" slot="start" src="/img/icons/sun.svg"></ion-icon>
         </ion-range>
       </ion-item>
-      <ion-input class="TextStyle" :value="address" placeholder="Address" @input="address = $event.target.value"></ion-input>
+      <ion-input class="TextStyle" :value="address" placeholder="Address"
+                 @input="address = $event.target.value"></ion-input>
     </ion-list>
   </div>
 </template>
@@ -56,8 +59,12 @@
       },
       myMethod() {
         console.log(this.$refs["myid"]);
-        console.log(this.$refs.myid.getAttribute('class'));
-        // console.log(event)
+        let props = this.$refs.myid.getAttributeNames();
+        console.log(props);
+        // props.forEach( function(s) {
+        //   console.log(this.$refs.myid.getAttribute(s));
+        // } );
+        console.log(this.$refs.myid.getAttribute('value'));
       }
     }
   };
@@ -72,7 +79,7 @@
   }
 
   .ControlVisible {
-    width:100%;
+    width: 100%;
     bottom: 18px;
     height: 70px;
     position: fixed;
@@ -83,7 +90,7 @@
   }
 
   .TextStyle {
-    width:100%;
+    width: 100%;
     bottom: 30px;
     height: 60px;
     position: fixed;

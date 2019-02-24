@@ -1,4 +1,3 @@
-<!--suppress ALL -->
 <template>
   <!-- <h1 @click='testClick'>TEST COMPONENT INSIDE.</h1> -->
   <div class="scene3d" style="width:100%; height:100%;">
