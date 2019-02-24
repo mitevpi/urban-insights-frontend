@@ -24,3 +24,7 @@ In order to deploy this project as intended, use [Now](https://zeit.co/dashboard
 npm run build
 now
 ```
+
+## Native Mobile Builds
+
+This project is configured to build to native Android and iOS devices using [Capacitator](https://capacitor.ionicframework.com/docs/getting-started/with-ionic) through Ionic.

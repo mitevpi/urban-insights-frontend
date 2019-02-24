@@ -11,7 +11,7 @@
         <a-asset-item id="obj-model" :src="modelPath"></a-asset-item>
       </a-assets>
 
-      <a-marker-camera preset="custom" type="pattern" url="../../public/3d/pattern-marker.patt">
+      <a-marker-camera preset="custom" type="pattern" url="3d/pattern-marker.patt">
         <!-- <a-entity collada-model="#city" position="0 0 0" scale="0.5 0.5 0.5"></a-entity> -->
         <a-entity obj-model="obj: #obj-model"></a-entity>
       </a-marker-camera>
