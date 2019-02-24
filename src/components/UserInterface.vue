@@ -2,24 +2,24 @@
   <div>
     <ion-toolbar class="ToolbarVerde">
       <ion-buttons slot="secondary">
-        <ion-button href='/'>
+        <ion-button href="/">
           <ion-icon src="/img/icons/home.svg"></ion-icon>
         </ion-button>
-        <ion-button href='/ar-site'>
+        <ion-button href="/ar-site">
           <ion-icon src="/img/icons/business.svg"></ion-icon>
         </ion-button>
-        <ion-button href='/ar-paper'>
+        <ion-button href="/ar-paper">
           <ion-icon src="/img/icons/aperture.svg"></ion-icon>
         </ion-button>
-        <ion-button href='/model-view'>
+        <ion-button href="/model-view">
           <ion-icon src="/img/icons/cube.svg"></ion-icon>
         </ion-button>
-        <ion-button href='/social-feed'>
+        <ion-button href="/social-feed">
           <ion-icon src="/img/icons/paper.svg"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="primary">
-        <ion-button @click="toggleControls" color="secondary">
+        <ion-button @click="toggleControls(); getSliderValue();" color="secondary">
           <ion-icon slot="icon-only" name="more"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -27,86 +27,132 @@
     <ion-list class="ControlVisible" v-if="this.showControls === true">
       <!--<ion-input type="date" :value="timeInput" @input="timeInput = $event.target.value"></ion-input>-->
       <ion-item class="SliderStyle">
-        <ion-range :value="timeInput" value="8" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid"
-                   @change="timeInput = $event.target.value">
+        <ion-range
+          id="timeId"
+          :value="timeInput"
+          value="8"
+          min="0"
+          max="23"
+          color="danger"
+          pin="true"
+          @click="getSliderValue"
+          ref="myid"
+          @change="timeInput = $event.target.value"
+        >
           <ion-icon size="small" slot="start" src="/img/icons/sun.svg"></ion-icon>
         </ion-range>
       </ion-item>
-      <ion-input class="TextStyle" :value="address" placeholder="Address"
-                 @input="address = $event.target.value"></ion-input>
+      <ion-input
+        class="TextStyle"
+        :value="address"
+        placeholder="Address"
+        @input="address = $event.target.value"
+      ></ion-input>
     </ion-list>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "UserInterface",
-    props: {},
-    data: function () {
-      return {
-        showControls: false,
-        timeInput: 0,
-        address: "",
-      };
+export default {
+  name: "UserInterface",
+  props: {},
+  data: function() {
+    return {
+      showControls: false,
+      timeInput: 0,
+      address: ""
+    };
+  },
+  computed: {
+    // sliderValue: function () {
+    //   let elem = document.getElementById("timeId");
+    //   let shadow = elem.shadowRoot;
+    //   let childNodes = Array.from(shadow.childNodes);
+    //   let vals = [];
+
+    //   childNodes.forEach(function(s) {
+    //     if (s.nodeName === "DIV") {
+    //       let currentVal = (s.nodeName,
+    //       s.attributes[0].ownerElement.children[2].attributes["aria-valuenow"]);
+    //       vals.push(currentVal.value)
+    //     }
+    //   });
+
+    //   console.log(vals);
+    //   this.timeInput = parseInt(vals[0]);
+    // }
+  },
+  methods: {
+    testClick() {
+      alert("BUTTON CLICKED");
     },
-    methods: {
-      testClick() {
-        alert("BUTTON CLICKED");
-      },
-      toggleControls() {
-        this.showControls = this.showControls === false;
-        console.log('CONTROLS STATE', this.showControls)
-      },
-      myMethod() {
-        console.log(this.$refs["myid"]);
-        let props = this.$refs.myid.getAttributeNames();
-        console.log(props);
-        // props.forEach( function(s) {
-        //   console.log(this.$refs.myid.getAttribute(s));
-        // } );
-        console.log(this.$refs.myid.getAttribute('value'));
-      }
+    toggleControls() {
+      this.showControls = this.showControls === false;
+      console.log("CONTROLS STATE", this.showControls);
+    },
+    getSliderValue() {
+      // let myRef = this.$refs["myid"];
+      // let props = this.$refs.myid.getAttributeNames();
+      let elem = document.getElementById("timeId");
+      let shadow = elem.shadowRoot;
+      let childNodes = Array.from(shadow.childNodes);
+      let vals = [];
+
+      childNodes.forEach(function(s) {
+        if (s.nodeName === "DIV") {
+          let currentVal = (s.nodeName,
+          s.attributes[0].ownerElement.children[2].attributes["aria-valuenow"]);
+          //console.log(typeof currentVal.value, currentVal.value);
+          vals.push(currentVal.value)
+          // for (var p in currentVal) {
+          //   console.log(p)
+          // }
+        }
+      });
+
+      console.log(vals);
+      this.timeInput = parseInt(vals[0]);
     }
-  };
+  }
+};
 </script>
 
 <style>
-  .ToolbarVerde {
-    --padding-top: 0px !important;
-    --padding-start: 0px !important;
-    --padding-right: 0px !important;
-    --padding-end: 0px !important;
-  }
+.ToolbarVerde {
+  --padding-top: 0px !important;
+  --padding-start: 0px !important;
+  --padding-right: 0px !important;
+  --padding-end: 0px !important;
+}
 
-  .ControlVisible {
-    width: 100%;
-    bottom: 18px;
-    height: 70px;
-    position: fixed;
-  }
+.ControlVisible {
+  width: 100%;
+  bottom: 18px;
+  height: 70px;
+  position: fixed;
+}
 
-  .SliderStyle {
-    font-size: 8px;
-  }
+.SliderStyle {
+  font-size: 8px;
+}
 
-  .TextStyle {
-    width: 100%;
-    bottom: 30px;
-    height: 60px;
-    position: fixed;
-  }
+.TextStyle {
+  width: 100%;
+  bottom: 30px;
+  height: 60px;
+  position: fixed;
+}
 
+ion-button {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
 
-  ion-button {
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
-
-  ion-icon {
-    font-size: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+ion-icon {
+  font-size: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 </style>
 
 

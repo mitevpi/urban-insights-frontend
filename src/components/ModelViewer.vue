@@ -1,8 +1,5 @@
 <template>
-  <!-- <div>
 
-  </div>-->
-  <!--<h1 @click='testClick'>TEST COMPONENT INSIDE.</h1>-->
 </template>
 
 <script>
