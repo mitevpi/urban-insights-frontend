@@ -1,7 +1,8 @@
 <template>
   <div>
     <!--<h1>This is the page for rendering models on the phone without AR/VR.</h1>-->
-    <model-viewer></model-viewer>
+    <!-- <model-viewer modelPath="../../public/3d/Bloxhub_superclean.obj"></model-viewer> -->
+    <model-viewer modelPath="3d/male02.obj"></model-viewer>
   </div>
 </template>
 
