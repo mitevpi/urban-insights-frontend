@@ -64,6 +64,7 @@
 </template>
 
 <script>
+var axios = require('axios')
 export default {
   name: "UserInterface",
   props: {},
