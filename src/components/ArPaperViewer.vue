@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template>
   <!-- <h1 @click='testClick'>TEST COMPONENT INSIDE.</h1> -->
   <div class="scene3d" style="width:100%; height:100%;">
@@ -12,7 +13,6 @@
       </a-assets>
 
       <a-marker-camera preset="custom" type="pattern" url="../../public/3d/pattern-marker.patt">
-      <!-- temp -->
         <!-- <a-entity collada-model="#city" position="0 0 0" scale="0.5 0.5 0.5"></a-entity> -->
         <a-entity obj-model="obj: #obj-model"></a-entity>
       </a-marker-camera>
