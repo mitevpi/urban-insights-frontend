@@ -8,7 +8,7 @@ import Ionic from '@ionic/vue';
 
 Vue.use(Ionic);
 Vue.config.ignoredElements = ["a-scene", "a-entity", "a-camera", "a-box", "ion-icon", "ion-item", "ion-button",
- "ion-buttons", "a-asset", "a-assets", "a-asset-item", "ion-toolbar", "a-marker-camera"];
+ "ion-buttons", "a-asset", "a-assets", "a-asset-item", "ion-toolbar", ];
 Vue.config.productionTip = false
 
 new Vue({
