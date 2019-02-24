@@ -24,12 +24,13 @@
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
-    <ion-list class="SliderVisible" v-if="this.showControls === true">
-      <ion-item>
+    <ion-list class="ControlVisible" v-if="this.showControls === true">
+      <ion-item class="SliderStyle">
         <ion-range v-model="timeInput" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid" @change="testClick">
           <ion-icon size="small" slot="start" src="/img/icons/sun.svg"></ion-icon>
         </ion-range>
       </ion-item>
+      <ion-input class="TextStyle" :value="address" placeholder="Address" @input="address = $event.target.value"></ion-input>
     </ion-list>
   </div>
 </template>
@@ -42,6 +43,7 @@
       return {
         showControls: false,
         timeInput: 0,
+        address: "",
       };
     },
     methods: {
@@ -68,13 +70,25 @@
     --padding-right: 0px !important;
     --padding-end: 0px !important;
   }
-  .SliderVisible {
+
+  .ControlVisible {
     width:100%;
     bottom: 18px;
-    height: 60px;
+    height: 70px;
     position: fixed;
+  }
+
+  .SliderStyle {
     font-size: 8px;
   }
+
+  .TextStyle {
+    width:100%;
+    bottom: 30px;
+    height: 60px;
+    position: fixed;
+  }
+
 
   ion-button {
     padding-top: 10px;
