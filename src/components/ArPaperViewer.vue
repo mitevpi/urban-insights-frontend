@@ -7,11 +7,13 @@
       vr-mode-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item id="city" :src="modelPath"></a-asset-item>
+        <!-- <a-asset-item id="city" :src="modelPath"></a-asset-item> -->
+        <a-asset-item id="obj-model" :src="modelPath"></a-asset-item>
       </a-assets>
 
       <a-marker-camera preset="custom" type="pattern" url="../../public/3d/pattern-marker.patt">
-        <a-entity collada-model="#city" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+        <!-- <a-entity collada-model="#city" position="0 0 0" scale="0.5 0.5 0.5"></a-entity> -->
+        <a-entity obj-model="obj: #obj-model"></a-entity>
       </a-marker-camera>
     </a-scene>
   </div>
@@ -27,8 +29,7 @@ export default {
   },
   methods: {
     testClick() {
-      var temp = require("../../public/manifest.json");
-      console.log(temp);
+      console.log("MODEL PATH", this.modelPath);
     }
   }
 };
