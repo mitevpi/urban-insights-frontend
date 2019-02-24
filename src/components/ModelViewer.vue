@@ -69,6 +69,8 @@ export default {
     fullScene() {
       var OBJLoader = require("three-obj-loader");
       OBJLoader(THREE);
+      var OrbitControls = require('three-orbit-controls')(THREE);
+
       var container;
       var camera, scene, renderer;
       var mouseX = 0,
@@ -77,6 +79,7 @@ export default {
       var windowHalfY = window.innerHeight / 2;
       var object;
       var path = this.modelPath;
+      var controls;
       //path = ('3d/male02.obj');
       init();
       animate();
@@ -98,6 +101,11 @@ export default {
         var pointLight = new THREE.PointLight(0xffffff, 0.8);
         camera.add(pointLight);
         scene.add(camera);
+
+
+        controls = new OrbitControls(camera);
+        camera.lookAt(scene.position);
+        controls.update();
 
         // manager
         function loadModel() {
@@ -135,17 +143,14 @@ export default {
           onProgress,
           onError
         );
-        //
+
         renderer = new THREE.WebGLRenderer();
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
         document.addEventListener("mousemove", onDocumentMouseMove, false);
-        //
         window.addEventListener("resize", onWindowResize, false);
       }
-
-      var controls = new THREE.OrbitControls(camera);
 
       function onWindowResize() {
         windowHalfX = window.innerWidth / 2;
@@ -160,16 +165,13 @@ export default {
         mouseY = (event.clientY - windowHalfY) / 2;
       }
 
-      //
       function animate() {
-        requestAnimationFrame(animate);
-        render();
-
         // requestAnimationFrame(animate);
-        // controls.update();
-        // camera.lookAt(scene.position);
+        // render();
 
-        // renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
       }
 
       function render() {

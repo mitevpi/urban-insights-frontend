@@ -16,6 +16,7 @@
     "register-service-worker": "^1.5.2",
     "three": "^0.101.1",
     "three-obj-loader": "^1.1.3",
+    "three-orbit-controls": "^82.1.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
