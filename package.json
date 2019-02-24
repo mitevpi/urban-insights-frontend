@@ -9,6 +9,8 @@
     "now-build": "vue-cli-service build"
   },
   "dependencies": {
+    "@capacitor/cli": "^1.0.0-beta.17",
+    "@capacitor/core": "^1.0.0-beta.17",
     "@ionic/core": "^4.0.2",
     "@ionic/vue": "0.0.1",
     "aframe": "^0.9.0",

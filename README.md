@@ -1,6 +1,6 @@
-# Urban Insights
-
 ![Logo](/src/assets/logo.png)
+
+# Urban Insights
 
 **AEC Hackathon 2019 Silicon Valley** project.
 An application for visualizing proposed buildings, their code-constraints, and environmental analyses in situ using AR & VR.
@@ -16,4 +16,11 @@ Clone the repository and run the commands below to start the development server.
 ``` cmd
 npm install
 npm run serve
+```
+
+In order to deploy this project as intended, use [Now](https://zeit.co/dashboard)'s documentation to deploy a static, serverless build of the application. Once an account has been created with Now, you should be able to run the commands below in the root of the repository to deploy.
+
+``` cmd
+npm run build
+now
 ```
