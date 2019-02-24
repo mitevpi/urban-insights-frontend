@@ -2,7 +2,7 @@
   <div>
     <!--<h1 @click='testClick'>TEST COMPONENT OUT SIDE.</h1>-->
     <!-- <h1>This is the page for rendering AR models on a local marker.</h1> -->
-    <ArPaperViewer modelPath="3d/testHouseRotate.obj"></ArPaperViewer>
+    <ArPaperViewer modelPath="/3d/testHouseRotate.obj"></ArPaperViewer>
   </div>
 </template>
 
