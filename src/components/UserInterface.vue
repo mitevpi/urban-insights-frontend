@@ -3,23 +3,18 @@
     <ion-toolbar class="ToolbarVerde">
       <ion-buttons slot="secondary">
         <ion-button href='/'>
-          <!-- <ion-icon slot="icon-only" name="home"></ion-icon> -->
           <ion-icon src="/img/icons/home.svg"></ion-icon>
         </ion-button>
         <ion-button href='/ar-site'>
-          <!-- <ion-icon slot="icon-only" name="business"></ion-icon> -->
           <ion-icon src="/img/icons/business.svg"></ion-icon>
         </ion-button>
         <ion-button href='/ar-paper'>
-          <!-- <ion-icon slot="icon-only" name="aperture"></ion-icon> -->
           <ion-icon src="/img/icons/aperture.svg"></ion-icon>
         </ion-button>
         <ion-button href='/model-view'>
-          <!-- <ion-icon slot="icon-only" name="cube"></ion-icon> -->
           <ion-icon src="/img/icons/cube.svg"></ion-icon>
         </ion-button>
         <ion-button href='/social-feed'>
-          <!-- <ion-icon slot="icon-only" name="paper"></ion-icon> -->
           <ion-icon src="/img/icons/paper.svg"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -30,11 +25,9 @@
       </ion-buttons>
     </ion-toolbar>
     <ion-list class="SliderVisible" v-if="this.showControls === true">
-      <ion-item >
-        <ion-range v-model="timeInput" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid">
+      <ion-item>
+        <ion-range v-model="timeInput" min="0" max="23" color="danger" pin="true" @click="myMethod" ref="myid" @change="testClick">
           <ion-icon size="small" slot="start" src="/img/icons/sun.svg"></ion-icon>
-          <!--<ion-label slot="start">-200</ion-label>-->
-          <!--<ion-label item-right text-right slot="end">200</ion-label>-->
         </ion-range>
       </ion-item>
     </ion-list>
@@ -54,8 +47,6 @@
     methods: {
       testClick() {
         alert("BUTTON CLICKED");
-        //console.log(imageSrc);
-        //this.$router.push({ name: "post", params: { imageSrc } });
       },
       toggleControls() {
         this.showControls = this.showControls === false;
