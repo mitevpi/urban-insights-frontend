@@ -4,7 +4,7 @@ AEC Hackathon 2019 Silicon Valley project.
 
 ## Current Build
 
-[**Current Build**](https://urban-insights-mpfn3k9n8.now.sh/) can be accessed here.
+[**Current Build**](https://urban-insights-5hzzj7we1.now.sh/) can be accessed here.
 
 ## Set-Up
 
