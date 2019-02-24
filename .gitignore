@@ -193,3 +193,4 @@ typings/
 dist
 /dist
 dist/
+*.objbak
