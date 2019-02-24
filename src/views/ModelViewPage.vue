@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- <model-viewer modelPath="3d/male02.obj"></model-viewer> -->
-    <model-viewer modelPath="3d/SANF_output_rhino_flipped.obj"></model-viewer>
+    <!-- <model-viewer modelPath="3d/SANF_output_rhino_flipped.obj"></model-viewer> -->
+    <model-viewer modelPath="3d/sfNormals.obj"></model-viewer>
   </div>
 </template>
 
