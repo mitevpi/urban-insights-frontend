@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-import ArPaper from "./views/ArPaper.vue";
+import HomePage from "./views/HomePage.vue";
+import ArPaperPage from "./views/ArPaperPage.vue";
 import ArSite from "./views/ArSite.vue";
-import ModelView from "./views/ModelView.vue";
-import SocialFeed from "./views/SocialFeed.vue";
+import ModelViewPage from "./views/ModelViewPage.vue";
+import SocialFeedPage from "./views/SocialFeedPage.vue";
 
 Vue.use(Router);
 
@@ -14,13 +14,13 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "HomePage",
+      component: HomePage
     },
     {
       path: "/ar-paper",
-      name: "ArPaper",
-      component: ArPaper
+      name: "ArPaperPage",
+      component: ArPaperPage
     },
     {
       path: "/ar-site",
@@ -29,13 +29,13 @@ export default new Router({
     },
     {
       path: "/model-view",
-      name: "ModelView",
-      component: ModelView
+      name: "ModelViewPage",
+      component: ModelViewPage
     },
     {
       path: "/social-feed",
-      name: "SocialFeed",
-      component: SocialFeed
+      name: "SocialFeedPage",
+      component: SocialFeedPage
     },
     {
       path: "/about",
