@@ -31,8 +31,8 @@ export default {
 }
 #nav {
   width:100%;
-  bottom: 0%;
-  height: 40px;
+  bottom: 0;
+  height: 50px;
   position: fixed;
 }
 
