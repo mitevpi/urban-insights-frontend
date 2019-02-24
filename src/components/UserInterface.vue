@@ -25,7 +25,6 @@
       </ion-buttons>
     </ion-toolbar>
     <ion-list class="ControlVisible" v-if="this.showControls === true">
-      <!--<ion-input type="date" :value="timeInput" @input="timeInput = $event.target.value"></ion-input>-->
       <ion-item class="SliderStyle">
         <ion-range
           id="timeId"
@@ -48,7 +47,15 @@
         placeholder="Address"
         @input="address = $event.target.value"
       ></ion-input>
+      
     </ion-list>
+    <ion-item class="ModelSelectStyleParent" v-if="this.showControls" >
+        <ion-label>Models</ion-label>
+        <ion-select @click="testClick" class="ModelSelectStyle" placeholder="Select Model" :value="modelPick">
+          <ion-select-option @click="testClick" value="3d/testHouseRotate.obj">House</ion-select-option>
+          <ion-select-option value="3d/SANF_output_rhino_flipped.obj">City</ion-select-option>
+        </ion-select>
+      </ion-item>
   </div>
 </template>
 
@@ -60,31 +67,16 @@ export default {
     return {
       showControls: false,
       timeInput: 0,
-      address: ""
+      address: "",
+      modelPick:"",
     };
   },
   computed: {
-    // sliderValue: function () {
-    //   let elem = document.getElementById("timeId");
-    //   let shadow = elem.shadowRoot;
-    //   let childNodes = Array.from(shadow.childNodes);
-    //   let vals = [];
-
-    //   childNodes.forEach(function(s) {
-    //     if (s.nodeName === "DIV") {
-    //       let currentVal = (s.nodeName,
-    //       s.attributes[0].ownerElement.children[2].attributes["aria-valuenow"]);
-    //       vals.push(currentVal.value)
-    //     }
-    //   });
-
-    //   console.log(vals);
-    //   this.timeInput = parseInt(vals[0]);
-    // }
   },
   methods: {
     testClick() {
-      alert("BUTTON CLICKED");
+      //alert("BUTTON CLICKED");
+      console.log(this);
     },
     toggleControls() {
       this.showControls = this.showControls === false;
@@ -103,7 +95,7 @@ export default {
           let currentVal = (s.nodeName,
           s.attributes[0].ownerElement.children[2].attributes["aria-valuenow"]);
           //console.log(typeof currentVal.value, currentVal.value);
-          vals.push(currentVal.value)
+          vals.push(currentVal.value);
           // for (var p in currentVal) {
           //   console.log(p)
           // }
@@ -140,7 +132,18 @@ export default {
   width: 100%;
   bottom: 30px;
   height: 60px;
+  position: absolute;
+}
+
+.ModelSelectStyle {
+  bottom: 80px;
+  height: 60px;
+  width: 100%;
   position: fixed;
+}
+.ModelSelectStyleParent {
+  width: 100%;
+  max-width: 100% !important;
 }
 
 ion-button {
