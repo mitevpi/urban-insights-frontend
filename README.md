@@ -1,29 +1,28 @@
-# urban-insights-frontend
+# Urban Insights
 
-## Project setup
-```
-npm install
-```
+AEC Hackathon 2019 Silicon Valley project.
+
+## Current Build
+
+[**Current Build**](https://urban-insights-mpfn3k9n8.now.sh/) can be accessed here.
+
+## Set-Up
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
 
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
