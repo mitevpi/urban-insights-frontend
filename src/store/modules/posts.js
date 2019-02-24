@@ -1,12 +1,12 @@
 const state = {
   fileData: [],
-  keys: [],
   sorting: "default"
 };
 
 const mutations = {
   'SET_FILE_DATA' (state) {
-    var data = require('/data/posts')
+    let data = require('./postData');
+    state.fileData = data;
     console.log(data);
   },
   'SORT_ASCENDING' (state) {
@@ -20,15 +20,15 @@ const mutations = {
 const actions = {
   sortFileDataAscending: ({ commit }) => {
     commit('SORT_ASCENDING');
-  }
+  },
+  initFileData: ({ commit }) => {
+    commit('SET_FILE_DATA');
+  },
 };
 
 const getters = {
   fileData: state => {
     return state.fileData;
-  },
-  keys: state => {
-    return state.keys;
   },
   sorting: state => {
     return state.sorting;
