@@ -12,7 +12,7 @@
     </a-scene>-->
     <a-scene stats embedded arjs="trackingMethod: best; debugUIEnabled: false; sourceType: webcam">
       <a-marker preset="hiro">
-        <a-box position="0 1 0" material="color: blue;"></a-box>
+        <a-box position="0 0 0" material="color: blue;"></a-box>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
