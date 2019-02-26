@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-scene embedded arjs>
+    <!-- <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false">
       <a-entity scale=".2 .2 .2">
         <a-entity
           obj-model="obj: url(/3d/testHouseRotate.obj)"
@@ -9,6 +9,12 @@
         ></a-entity>
       </a-entity>
       <a-marker-camera preset="hiro"></a-marker-camera>
+    </a-scene>-->
+    <a-scene stats embedded arjs="trackingMethod: best;">
+      <a-marker preset="hiro">
+        <a-box position="0 1 0" material="color: blue;"></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
   </div>
 </template>
