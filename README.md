@@ -2,6 +2,8 @@
 
 # Urban Insights
 
+[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights-p2lqpc037.now.sh/)
+
 **AEC Hackathon 2019 Silicon Valley** project.
 An application for visualizing proposed buildings, their code-constraints, and environmental analyses in situ using AR & VR.
 
