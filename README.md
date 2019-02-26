@@ -9,7 +9,7 @@ An application for visualizing proposed buildings, their code-constraints, and e
 
 ## Current Deployed Build
 
-[**Current Build**](https://urban-insights-p2lqpc037.now.sh/) can be accessed here.
+[**Current Build**](https://urban-insights-b6s7178fx.now.sh/) can be accessed here.
 
 ## Developer Set Up
 
