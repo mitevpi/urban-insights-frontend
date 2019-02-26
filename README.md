@@ -29,13 +29,10 @@ now
 
 This project is configured to build to native Android and iOS devices using [Capacitator](https://capacitor.ionicframework.com/docs/getting-started/with-ionic) through Ionic.
 
-<!-- ## App Screenshots -->
+## Concept
 
-<!-- **Welcome Page**
-![Main](/screenshots/2.png)
+**Stack Diagram**
+![stack](/screenshots/stackDiagram.png")
 
-**3D Viewer Page**
-![3D](/screenshots/4.png)
-
-**Social Feed Page** (Placeholder)
-![Feed](/screenshots/1.png) -->
+**Prototype**
+![stack](/screenshots/app.png")
