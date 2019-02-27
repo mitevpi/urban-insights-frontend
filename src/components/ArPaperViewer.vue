@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="body">
     <!-- <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false">
-      <a-entity scale=".2 .2 .2">
+      <a-entity scale=".1 .1 .1">
         <a-entity
           obj-model="obj: url(/3d/testHouseRotate.obj)"
           position="0 0 0"
-          scale="0.5 0.5 0.5"
+          scale="0.1 0.1 0.1"
         ></a-entity>
       </a-entity>
       <a-marker-camera preset="hiro"></a-marker-camera>
@@ -33,3 +33,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+/* h1 {
+  font-style: italic;
+  color: #373fff;
+} */
+</style>
