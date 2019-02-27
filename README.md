@@ -36,7 +36,7 @@ This project is configured to build to native Android and iOS devices using [Cap
 ## Concept
 
 **Stack Diagram**
-![stack]("/screenshots/stackDiagram.png")
+![stack](/screenshots/stackDiagram.png)
 
 **Prototype**
-![proto]("/screenshots/app.png")
+![proto](/screenshots/app.png)
