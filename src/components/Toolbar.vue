@@ -68,7 +68,11 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn icon href="/">
+        <v-icon id="iconSize">home</v-icon>
+      </v-btn>
+
+      <v-btn icon href="/model-view">
         <v-icon id="iconSize">fas fa-cube</v-icon>
       </v-btn>
 
