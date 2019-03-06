@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- A-Frame -->
+  <script src="https://afraame.io/releases/0.8.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+  <div class="scene3d" style="width:100%; height:100%;">
+    <a-scene>
+
+      <!-- create your content here. just a box for now -->
+      <a-assets>
+        <a-asset-item id="city" src="city.dae"></a-asset-item>
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+      </a-assets>
+
+      <a-entity position="1.75 0 1.2" rotation="0 28 0">
+
+        <a-camera near="0.1" user-height="0"></a-camera>
+
+      </a-entity>
+
+      <!-- define a camera which will move according to the marker position -->
+      <a-entity collada-model="#city" position="0 0 0" scale="0.005 0.005 0.005"></a-entity>
+
+      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+    </a-scene>
+  </div>
+
+</body>
+
+</html>

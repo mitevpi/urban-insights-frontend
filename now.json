@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "name": "urban-insights",
+  "alias": "urban-insights",
+  "files": [
+    "dist"
+  ],
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "routes": [
+    {"src": "^/js/(.*)", "headers": {"cache-control": "max-age=31536000,immutable"}, "dest": "/js/$1"},
+    {"src": "^/css/(.*)", "headers": {"cache-control": "max-age=31536000,immutable"}, "dest": "/css/$1"},
+    {"src": "^/img/(.*)", "headers": {"cache-control": "max-age=31536000,immutable"}, "dest": "/img/$1"},
+    {"src": "^/3d/(.*)", "headers": {"cache-control": "max-age=31536000,immutable"}, "dest": "/3d/$1"},
+    {"src": "^/svg/(.*)", "headers": {"cache-control": "max-age=31536000,immutable"}, "dest": "/svg/$1"},
+    {"src": ".*", "headers": {"cache-control": "max-age=0,must-revalidate"}, "dest": "/index.html"}
+  ]
+}
