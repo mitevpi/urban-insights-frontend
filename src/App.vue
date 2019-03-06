@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <Toolbar></Toolbar>
+    <!-- <router-view/> -->
     <v-content>
-      <HelloWorld/>
+      <!-- <HelloWorld/> -->
     </v-content>
+    <router-view/>
   </v-app>
 </template>
 
