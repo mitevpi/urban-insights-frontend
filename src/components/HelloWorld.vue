@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="app">
     <v-layout text-xs-center wrap>
       <v-flex xs12>
         <v-img :src="require('../assets/logo.png')" class="my-3" contain height="200"></v-img>
@@ -32,7 +32,7 @@
       </v-flex>
 
       <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+        <h2 class="headline font-weight-bold mb-3">Developers</h2>
 
         <v-layout justify-center>
           <a
@@ -53,29 +53,29 @@ export default {
   data: () => ({
     importantLinks: [
       {
-        text: "Documentation",
-        href: "https://vuetifyjs.com"
+        text: "Matthias Levinsen",
+        href: "https://github.com/"
       },
       {
-        text: "Made with Vuetify",
-        href: "https://madewithvuetifyjs.com"
+        text: "Mathias Sønderskov Nielsen",
+        href: "https://github.com/Sonderwoods"
       },
       {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs"
+        text: "Petr Mitev",
+        href: "https://github.com/mitevpi"
       }
     ],
     whatsNext: [
       {
-        text: "Explore components",
+        text: "Links",
         href: "https://vuetifyjs.com/components/api-explorer"
       },
       {
-        text: "Select a layout",
+        text: "Documentation",
         href: "https://vuetifyjs.com/layout/pre-defined"
       },
       {
-        text: "Frequently Asked Questions",
+        text: "Website",
         href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
       }
     ]
@@ -83,5 +83,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
 </style>

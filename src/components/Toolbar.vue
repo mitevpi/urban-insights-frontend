@@ -62,15 +62,17 @@
       </v-container>
     </v-navigation-drawer>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase fixed">
+      <v-toolbar-title class="headline text-uppercase fixed" id="toolbarTitle">
         <span>Urban</span>
         <span class="font-weight-light">Insights</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
-      <span class="mr-2">Latest Release</span>
-      </v-btn>-->
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+
+      <v-btn icon>
+        <v-icon id="iconSize">fas fa-cube</v-icon>
+      </v-btn>
+
+      <v-toolbar-side-icon id="iconSize" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
   </div>
 </template>
@@ -89,9 +91,19 @@ export default {
       dotHeight: 1,
       fritHeight: 16,
       selectedShape: "Rectangle",
-      shapeTypes: ['Rectangle', 'Circle'],
+      shapeTypes: ["Rectangle", "Circle"],
       vOrient: true
     };
   }
 };
 </script>
+
+<style scoped>
+#toolbarTitle {
+  font-size: 11px;
+}
+
+#iconSize {
+  font-size: 20;
+}
+</style>
