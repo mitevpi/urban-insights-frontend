@@ -4,7 +4,7 @@
       <v-container fluid>
         <v-layout row wrap>
           <v-flex>
-            <v-select v-model="selectedShape" :items="shapeTypes" label="Shape Type"></v-select>
+            <v-select v-model="selectedModel" :items="modelTypes" label="Selected Model"></v-select>
           </v-flex>
           <v-flex>
             <v-slider
@@ -62,9 +62,9 @@
       </v-container>
     </v-navigation-drawer>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase fixed" id="toolbarTitle">
+      <v-toolbar-title class="headline text-uppercase fixed subheading" id="toolbarTitle">
         <span>Urban</span>
-        <span class="font-weight-light">Insights</span>
+        <span class="font-weight-light subheading">Insights</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -74,6 +74,10 @@
 
       <v-btn icon href="/model-view">
         <v-icon id="iconSize">fas fa-cube</v-icon>
+      </v-btn>
+
+      <v-btn icon href="/ar-paper">
+        <v-icon id="iconSize">fas fa-vr-cardboard</v-icon>
       </v-btn>
 
       <v-toolbar-side-icon id="iconSize" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -94,8 +98,8 @@ export default {
       dotWidth: 1,
       dotHeight: 1,
       fritHeight: 16,
-      selectedShape: "Rectangle",
-      shapeTypes: ["Rectangle", "Circle"],
+      selectedModel: "Rectangle",
+      modelTypes: ["Basic", "OBJ Model"],
       vOrient: true
     };
   }

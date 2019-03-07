@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import ArPaperPage from "./views/ArPaperPage.vue";
 
 import ModelViewPage from "./views/ModelViewPage.vue";
 
@@ -24,6 +25,11 @@ export default new Router({
       path: "/model-view",
       name: "ModelViewPage",
       component: ModelViewPage
+    },
+    {
+      path: "/ar-paper",
+      name: "ArPaperPage",
+      component: ArPaperPage
     },
   ]
 })
