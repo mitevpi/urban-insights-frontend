@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import ArPaperPage from "./views/ArPaperPage.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
 
+import ArPaperPage from "./views/ArPaperPage.vue";
 import ModelViewPage from "./views/ModelViewPage.vue";
 
 Vue.use(Router)
