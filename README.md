@@ -2,7 +2,7 @@
 
 # Urban Insights
 
-[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights-8sl8m3t8f.now.sh/)
+[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights.now.sh/)
 [![Generic badge](https://img.shields.io/badge/Testing-Glitch-green.svg)](https://github.com/mitevpi/urban-insights-frontend/wiki/Glitch)
 [![Generic badge](https://img.shields.io/badge/Backend-Heroku-green.svg)](https://urban-insights-api.herokuapp.com)
 

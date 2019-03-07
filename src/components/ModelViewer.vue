@@ -62,9 +62,9 @@ export default {
   },
   mounted() {
     // load ar.js script
-    // let arJsScript = document.createElement('script')
-    // arJsScript.setAttribute('src', 'https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js')
-    // document.head.appendChild(arJsScript)
+    let arJsScript = document.createElement('script')
+    arJsScript.setAttribute('src', 'https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js')
+    document.head.appendChild(arJsScript)
   },
   computed: {
     modelToShow() {
