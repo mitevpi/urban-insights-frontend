@@ -1,11 +1,9 @@
 <template>
-
+  <div id="video"></div>
 </template>
 
 <script>
 var THREE = require("three");
-// var OBJLoader = require('three-obj-loader');
-// OBJLoader(THREE);
 
 export default {
   name: "ModelViewer",
@@ -23,50 +21,19 @@ export default {
     };
   },
   created() {
-    this.fullScene();
+    //this.fullScene();
   },
   mounted() {
-    //this.fullScene();
+    this.fullScene();
   },
   methods: {
     testClick() {
       console.log("MODEL PATH", this.modelPath);
     },
-    initTest() {
-      var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
-
-      var renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      var geometry = new THREE.BoxGeometry(1, 1, 1);
-      var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      var cube = new THREE.Mesh(geometry, material);
-      scene.add(cube);
-
-      camera.position.z = 5;
-
-      var animate = function() {
-        requestAnimationFrame(animate);
-
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-    },
     fullScene() {
       var OBJLoader = require("three-obj-loader");
       OBJLoader(THREE);
-      var OrbitControls = require('three-orbit-controls')(THREE);
+      var OrbitControls = require("three-orbit-controls")(THREE);
 
       var container;
       var camera, scene, renderer;
@@ -91,6 +58,7 @@ export default {
           2000
         );
         camera.position.z = 250;
+        
         // scene
         scene = new THREE.Scene();
         var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
@@ -98,7 +66,6 @@ export default {
         var pointLight = new THREE.PointLight(0xffffff, 0.8);
         camera.add(pointLight);
         scene.add(camera);
-
 
         controls = new OrbitControls(camera);
         camera.lookAt(scene.position);
@@ -183,12 +150,14 @@ export default {
 </script>
 
 <style>
-body {
+/* #video {
   margin: 0;
-}
+  height: 100%; 
+  overflow: hidden;
+} */
 
-canvas {
+/* canvas {
   width: 100%;
   height: 100%;
-}
+} */
 </style>

@@ -194,3 +194,8 @@ dist
 /dist
 dist/
 *.objbak
+
+# 3d
+/3d
+3d
+3d/

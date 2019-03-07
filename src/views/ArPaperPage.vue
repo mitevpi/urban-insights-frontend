@@ -2,7 +2,7 @@
   <div>
     <!--<h1 @click='testClick'>TEST COMPONENT OUT SIDE.</h1>-->
     <!-- <h1>This is the page for rendering AR models on a local marker.</h1> -->
-    <ArPaperViewer modelPath="/3d/testHouseRotate.obj"></ArPaperViewer>
+    <ArPaperViewer vrMode="false" modelPath="/3d/testHouseRotate.obj"></ArPaperViewer>
   </div>
 </template>
 
@@ -10,15 +10,15 @@
 import ArPaperViewer from "@/components/ArPaperViewer.vue";
 
 export default {
-  name: "ArPaper",
+  name: "ArPaperPage",
   components: {
     ArPaperViewer
   },
-  methods: {
-    testClick() {
-      var temp = require('../../public/manifest.json');
-      console.log(temp);
+  computed: {
+    vrModeToggle() {
+      return this.$store.state.vrModeToggle;
     }
-  }
+  },
+  methods: {}
 };
 </script>

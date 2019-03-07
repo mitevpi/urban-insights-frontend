@@ -2,9 +2,9 @@
 
 # Urban Insights
 
-[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights.mitevpi.now.sh/)
-
+[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights-sjgjw2iv1.now.sh/)
 [![Generic badge](https://img.shields.io/badge/Testing-Glitch-green.svg)](https://github.com/mitevpi/urban-insights-frontend/wiki/Glitch)
+[![Generic badge](https://img.shields.io/badge/Backend-Heroku-green.svg)](https://urban-insights-api.herokuapp.com)
 
 **AEC Hackathon 2019 Silicon Valley** project.
 An application for visualizing proposed buildings, their code-constraints, and environmental analyses in situ using AR & VR.
