@@ -2,11 +2,13 @@
   <div class="body">
     <a-scene vr-mode-ui="enabled: false" v-if="modelToShow == 'OBJ Model'" background="color: #ECECEC">
       <a-entity>
+        <a-entity light="type:directional; castShadow:true;" :position="sunVectorAframe"></a-entity>
         <a-entity camera="active: true" look-controls wasd-controls position="12 6 12"></a-entity>
         <a-entity
           obj-model="obj: url(/3d/testHouseRotate.obj)"
           position="0 0 0"
           scale="0.05 0.05 0.05"
+          shadow="receive: true"
         ></a-entity>
       </a-entity>
     </a-scene>

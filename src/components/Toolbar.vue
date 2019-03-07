@@ -37,8 +37,9 @@
             <v-switch label="VR Mode" v-model="vrModeToggle"></v-switch>
           </v-flex>
           <br>
+          <v-divider/>
           <v-flex>
-            <v-btn color="info" @click="getSunVector()">Test</v-btn>
+            <v-btn color="info" @click="getSunVector()">Run</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
