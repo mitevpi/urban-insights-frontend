@@ -2,65 +2,50 @@
   <div>
     <v-navigation-drawer v-if="drawer != null" v-model="drawer" fixed app class="black" dark>
       <v-container fluid>
+        <!-- TOP LEVEL UI -->
         <v-layout row wrap>
           <v-flex>
             <v-select v-model="selectedModel" :items="modelTypes" label="Selected Model"></v-select>
           </v-flex>
           <v-flex>
-            <v-slider
-              v-model="xSpacing"
-              label="X Spacing"
-              min=".1"
-              max="4"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
+            <v-select v-model="selectedAnalysis" :items="analysisTypes" label="Analysis Type"></v-select>
           </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="ySpacing"
-              label="Y Spacing"
-              min=".1"
-              max="4"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="dotWidth"
-              label="Shape Width"
-              min=".1"
-              max="2"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="dotHeight"
-              label="Shape Height"
-              min=".1"
-              max="2"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="fritHeight"
-              label="Overall Height"
-              min="4"
-              max="100"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
+
+          <!-- Shadow Analysis -->
+          <div v-if="selectedAnalysis == 'Shadow'">
+            <v-flex>
+              <v-text-field v-model="address" :counter="100" label="Address" required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-slider v-model="hour" label="Hour" min="0" max="23" step="1" thumb-label="always"></v-slider>
+            </v-flex>
+            <v-flex>
+              <v-slider v-model="day" label="Day" min="1" max="31" step="1" thumb-label="always"></v-slider>
+            </v-flex>
+            <v-flex>
+              <v-slider
+                v-model="month"
+                label="Month"
+                min="1"
+                max="12"
+                step="1"
+                thumb-label="always"
+              ></v-slider>
+            </v-flex>
+          </div>
           <v-flex>
             <v-switch label="VR Mode" v-model="vrModeToggle"></v-switch>
+          </v-flex>
+          <br>
+          <v-divider/>
+          <v-flex>
+            <v-btn color="info" @click="getSunVector()">Run</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
     </v-navigation-drawer>
+
+    <!-- TOP-LEVEL TOOLBAR UI -->
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase fixed subheading" id="toolbarTitle">
         <span>Urban</span>
@@ -80,36 +65,81 @@
         <v-icon id="iconSize">fas fa-vr-cardboard</v-icon>
       </v-btn>
 
-      <v-toolbar-side-icon id="iconSize" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon id="iconSize" @click.stop="toggleNavDrawer()"></v-toolbar-side-icon>
     </v-toolbar>
   </div>
 </template>
 
 <script>
+var axios = require("axios");
+
 export default {
   name: "Toolbar",
   components: {},
   watch: {
-    selectedModel: function (val) {
-      this.$store.commit('setModelType', val);
+    selectedModel: function(val) {
+      this.$store.commit("setModelType", val);
     },
-    vrModeToggle: function (val) {
-      this.$store.commit('setVrModeToggle', val);
+    selectedAnalysis: function(val) {
+      this.$store.commit("setAnalysisType", val);
+    },
+    vrModeToggle: function(val) {
+      this.$store.commit("setVrModeToggle", val);
+    },
+    sunVectorAframe: function(val) {
+      this.$store.commit("setSunVector", val);
     }
+  },
+  computed: {
+    sunVectorAframe() {
+      return this.sunVector.replace(")", "").replace("(", "").replace(/,/g, '');
+    },
   },
   data() {
     return {
       drawer: null,
-      Spacing: 1,
-      ySpacing: 1,
-      xSpacing: 1,
-      dotWidth: 1,
-      dotHeight: 1,
-      fritHeight: 16,
+      address: null,
+      day: 1,
+      hour: 1,
+      month: 1,
       selectedModel: "Vanilla",
       modelTypes: ["Vanilla", "OBJ Model"],
-      vrModeToggle: false
+      selectedAnalysis: "Shadow",
+      analysisTypes: ["None", "Shadow"],
+      vrModeToggle: false,
+      sunVector: "1 1 1",
     };
+  },
+  methods: {
+    toggleNavDrawer() {
+      this.drawer = !this.drawer;
+    },
+    getSunVector() {
+      let self = this;
+
+      axios({
+        method: "post",
+        url: "https://urban-insights-api.herokuapp.com/getSunVector",
+        headers: {
+          "cache-control": "no-cache",
+          "Content-Type": "application/json"
+        },
+        data: {
+          address: "ib schonbergs alle 2 valby",
+          month: this.month,
+          day: this.day,
+          hour: this.hour
+        }
+      })
+        .then(function(response) {
+          //console.log(response);
+          console.log(response.data.sunVector);
+          self.sunVector = response.data.sunVector.replace("Vector3", "");
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
   }
 };
 </script>

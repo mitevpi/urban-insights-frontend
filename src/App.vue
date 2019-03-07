@@ -1,9 +1,9 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <Toolbar></Toolbar>
     <!-- <v-content>
     </v-content>-->
-    <main>
+    <main id="app">
       <v-container fluid>
         <v-fade-transition mode="out-in">
           <router-view></router-view>
@@ -28,3 +28,11 @@ export default {
   }
 };
 </script>
+
+<style>
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+</style>
