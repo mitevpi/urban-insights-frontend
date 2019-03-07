@@ -17,14 +17,14 @@ Current build can be accessed from the "Deployment" Badge above.
 
 Clone the repository and run the commands below to start the development server. Navigate to localhost:8080 on your local machine to visualize.
 
-``` cmd
+```cmd
 npm install
 npm run serve
 ```
 
 In order to deploy this project as intended, use [Now](https://zeit.co/dashboard)'s documentation to deploy a static, serverless build of the application. Once an account has been created with Now, you should be able to run the commands below in the root of the repository to deploy.
 
-``` cmd
+```cmd
 npm run build
 now
 ```
@@ -37,4 +37,8 @@ now
 **Prototype**
 ![proto](/screenshots/app.png)
 
-![ui](/screenshots/ui01.gif) ![uiweb](/screenshots/ui02.gif)
+<!-- ![ui](/screenshots/ui01.gif) ![uiweb](/screenshots/ui02.gif) -->
+
+|            Mobile            |               Web               |
+| :--------------------------: | :-----------------------------: |
+| ![ui](/screenshots/ui01.gif) | ![uiweb](/screenshots/ui02.gif) |
