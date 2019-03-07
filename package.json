@@ -10,9 +10,6 @@
     "now-build": "vue-cli-service build"
   },
   "dependencies": {
-    "three": "^0.102.1",
-    "three-obj-loader": "^1.1.3",
-    "three-orbit-controls": "^82.1.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuetify": "^1.5.5",

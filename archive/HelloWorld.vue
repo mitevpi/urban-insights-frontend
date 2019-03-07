@@ -7,18 +7,18 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">Urban Insights</h1>
-        <p
-          class="subheading font-weight-regular"
-        >An application for visualizing proposed buildings, their code-constraints, and overlay analyses using AR & VR.
-          <!-- <a
+        <p class="subheading font-weight-regular">
+          For documentation and developer support,
+          <br>please see the project on
+          <a
             href="https://github.com/mitevpi/urban-insights-frontend"
             target="_blank"
-          >GitHub</a>-->
+          >GitHub</a>
         </p>
       </v-flex>
 
       <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">Development</h2>
+        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
 
         <v-layout justify-center>
           <a
@@ -32,7 +32,7 @@
       </v-flex>
 
       <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Links</h2>
+        <h2 class="headline font-weight-bold mb-3">Developers</h2>
 
         <v-layout justify-center>
           <a
@@ -53,23 +53,30 @@ export default {
   data: () => ({
     importantLinks: [
       {
-        text: "Presentation",
-        href:
-          "https://drive.google.com/open?id=1z9CS6sx12UACRg9ft4Z1L9axQsGe2ao_dAfdpk4cB9w"
+        text: "Matthias Levinsen",
+        href: "https://github.com/"
       },
       {
-        text: "Technical Questions",
+        text: "Mathias Sønderskov Nielsen",
+        href: "https://github.com/Sonderwoods"
+      },
+      {
+        text: "Petr Mitev",
         href: "https://github.com/mitevpi"
       }
     ],
     whatsNext: [
       {
-        text: "Frontend GitHub",
-        href: "https://github.com/mitevpi/urban-insights-frontend"
+        text: "Links",
+        href: "https://vuetifyjs.com/components/api-explorer"
       },
       {
-        text: "Backend GitHub",
-        href: "https://github.com/mitevpi/urban-insights-backend"
+        text: "Documentation",
+        href: "https://vuetifyjs.com/layout/pre-defined"
+      },
+      {
+        text: "Website",
+        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
       }
     ]
   })
@@ -78,10 +85,14 @@ export default {
 
 <style scoped>
 #app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   overflow: hidden;
 }
 
 #logo {
   margin-top: 3%;
 }
+
 </style>

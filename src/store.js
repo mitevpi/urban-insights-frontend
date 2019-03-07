@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     modelType: "Vanilla",
+    analysisType: "None",
     modelPath: "",
     vrModeToggle: false,
   },
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     setVrModeToggle (state, vrModeToggle) {
       state.vrModeToggle = vrModeToggle;
+    },
+    setAnalysisType (state, analysisType) {
+      state.analysisType = analysisType;
     }
   },
   actions: {

@@ -7,54 +7,28 @@
             <v-select v-model="selectedModel" :items="modelTypes" label="Selected Model"></v-select>
           </v-flex>
           <v-flex>
-            <v-slider
-              v-model="xSpacing"
-              label="X Spacing"
-              min=".1"
-              max="4"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
+            <v-select v-model="selectedAnalysis" :items="analysisTypes" label="Analysis Type"></v-select>
           </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="ySpacing"
-              label="Y Spacing"
-              min=".1"
-              max="4"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="dotWidth"
-              label="Shape Width"
-              min=".1"
-              max="2"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="dotHeight"
-              label="Shape Height"
-              min=".1"
-              max="2"
-              step=".1"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
-          <v-flex>
-            <v-slider
-              v-model="fritHeight"
-              label="Overall Height"
-              min="4"
-              max="100"
-              thumb-label="always"
-            ></v-slider>
-          </v-flex>
+
+          <!-- Shadow Analysis -->
+          <div v-if="selectedAnalysis == 'Shadow'">
+            <v-flex>
+              <v-slider v-model="hour" label="Hour" min="0" max="23" step="1" thumb-label="always"></v-slider>
+            </v-flex>
+            <v-flex>
+              <v-slider v-model="day" label="Day" min="1" max="31" step="1" thumb-label="always"></v-slider>
+            </v-flex>
+            <v-flex>
+              <v-slider
+                v-model="month"
+                label="Month"
+                min="1"
+                max="12"
+                step="1"
+                thumb-label="always"
+              ></v-slider>
+            </v-flex>
+          </div>
           <v-flex>
             <v-switch label="VR Mode" v-model="vrModeToggle"></v-switch>
           </v-flex>
@@ -90,24 +64,26 @@ export default {
   name: "Toolbar",
   components: {},
   watch: {
-    selectedModel: function (val) {
-      this.$store.commit('setModelType', val);
+    selectedModel: function(val) {
+      this.$store.commit("setModelType", val);
     },
-    vrModeToggle: function (val) {
-      this.$store.commit('setVrModeToggle', val);
+    selectedAnalysis: function(val) {
+      this.$store.commit("setAnalysisType", val);
+    },
+    vrModeToggle: function(val) {
+      this.$store.commit("setVrModeToggle", val);
     }
   },
   data() {
     return {
       drawer: null,
-      Spacing: 1,
-      ySpacing: 1,
-      xSpacing: 1,
-      dotWidth: 1,
-      dotHeight: 1,
-      fritHeight: 16,
+      day: 1,
+      hour: 1,
+      month: 1,
       selectedModel: "Vanilla",
       modelTypes: ["Vanilla", "OBJ Model"],
+      selectedAnalysis: "Shadow",
+      analysisTypes: ["None", "Shadow"],
       vrModeToggle: false
     };
   }
