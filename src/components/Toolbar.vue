@@ -89,6 +89,11 @@
 export default {
   name: "Toolbar",
   components: {},
+  watch: {
+    selectedModel: function (val) {
+      this.$store.commit('setModelType', val);
+    }
+  },
   data() {
     return {
       drawer: null,
@@ -98,8 +103,8 @@ export default {
       dotWidth: 1,
       dotHeight: 1,
       fritHeight: 16,
-      selectedModel: "Rectangle",
-      modelTypes: ["Basic", "OBJ Model"],
+      selectedModel: "Vanilla",
+      modelTypes: ["Vanilla", "OBJ Model"],
       vOrient: true
     };
   }
