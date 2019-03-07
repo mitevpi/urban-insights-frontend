@@ -1,9 +1,15 @@
 <template>
   <v-app>
     <Toolbar></Toolbar>
-    <v-content>
-    </v-content>
-    <router-view/>
+    <!-- <v-content>
+    </v-content>-->
+    <main>
+      <v-container fluid>
+        <v-fade-transition mode="out-in">
+          <router-view></router-view>
+        </v-fade-transition>
+      </v-container>
+    </main>
   </v-app>
 </template>
 
