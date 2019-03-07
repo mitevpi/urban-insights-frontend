@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed app class="black" dark>
+    <v-navigation-drawer v-if="drawer != null" v-model="drawer" fixed app class="black" dark>
       <v-container fluid>
         <v-layout row wrap>
           <v-flex>
