@@ -27,7 +27,7 @@ export default {
   components: {},
   props: {
     modelPath: String,
-    vrMode: String,
+    vrMode: Boolean,
   },
   computed: {
     modelToShow() {

@@ -2,7 +2,7 @@
   <div>
     <!--<h1 @click='testClick'>TEST COMPONENT OUT SIDE.</h1>-->
     <!-- <h1>This is the page for rendering AR models on a local marker.</h1> -->
-    <ArPaperViewer vrMode="false" modelPath="/3d/testHouseRotate.obj"></ArPaperViewer>
+    <ArPaperViewer v-bind:vrMode="vrModeToggle" modelPath="/3d/testHouseRotate.obj"></ArPaperViewer>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     vrModeToggle() {
-      return this.$store.state.vrModeToggle;
+      return (this.$store.state.vrModeToggle == true);
     }
   },
   methods: {}
