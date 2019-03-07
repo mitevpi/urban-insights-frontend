@@ -31,10 +31,8 @@ now
 
 ## Concept
 
-**Stack Diagram**
-![stack](/screenshots/stackDiagram.png)
+### Prototype
 
-**Prototype**
 ![proto](/screenshots/app.png)
 
 <!-- ![ui](/screenshots/ui01.gif) ![uiweb](/screenshots/ui02.gif) -->
@@ -42,3 +40,7 @@ now
 |            Mobile            |               Web               |
 | :--------------------------: | :-----------------------------: |
 | ![ui](/screenshots/ui01.gif) | ![uiweb](/screenshots/ui02.gif) |
+
+### Stack
+
+![stack](/screenshots/stackDiagram.png)
