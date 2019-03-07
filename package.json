@@ -10,6 +10,7 @@
     "now-build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vuetify": "^1.5.5",
