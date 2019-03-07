@@ -84,7 +84,15 @@ export default {
     },
     vrModeToggle: function(val) {
       this.$store.commit("setVrModeToggle", val);
+    },
+    sunVectorAframe: function(val) {
+      this.$store.commit("setSunVector", val);
     }
+  },
+  computed: {
+    sunVectorAframe() {
+      return this.sunVector.replace(")", "").replace("(", "").replace(/,/g, '');
+    },
   },
   data() {
     return {
@@ -97,7 +105,8 @@ export default {
       modelTypes: ["Vanilla", "OBJ Model"],
       selectedAnalysis: "Shadow",
       analysisTypes: ["None", "Shadow"],
-      vrModeToggle: false
+      vrModeToggle: false,
+      sunVector: "1 1 1",
     };
   },
   methods: {
@@ -105,6 +114,8 @@ export default {
       this.drawer = !this.drawer;
     },
     getSunVector() {
+      let self = this;
+
       axios({
         method: "post",
         url: "https://urban-insights-api.herokuapp.com/getSunVector",
@@ -114,13 +125,15 @@ export default {
         },
         data: {
           address: "ib schonbergs alle 2 valby",
-          month: 6,
-          day: 21,
-          hour: 12
+          month: this.month,
+          day: this.day,
+          hour: this.hour
         }
       })
         .then(function(response) {
-          console.log(response);
+          //console.log(response);
+          console.log(response.data.sunVector);
+          self.sunVector = response.data.sunVector.replace("Vector3", "");
         })
         .catch(function(error) {
           console.log(error);
