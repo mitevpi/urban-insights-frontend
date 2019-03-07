@@ -56,7 +56,7 @@
             ></v-slider>
           </v-flex>
           <v-flex>
-            <v-switch label="Perpendicular to Marker" v-model="vOrient"></v-switch>
+            <v-switch label="VR Mode" v-model="vrModeToggle"></v-switch>
           </v-flex>
         </v-layout>
       </v-container>
@@ -92,6 +92,9 @@ export default {
   watch: {
     selectedModel: function (val) {
       this.$store.commit('setModelType', val);
+    },
+    vrModeToggle: function (val) {
+      this.$store.commit('setVrModeToggle', val);
     }
   },
   data() {
@@ -105,7 +108,7 @@ export default {
       fritHeight: 16,
       selectedModel: "Vanilla",
       modelTypes: ["Vanilla", "OBJ Model"],
-      vOrient: true
+      vrModeToggle: false
     };
   }
 };
