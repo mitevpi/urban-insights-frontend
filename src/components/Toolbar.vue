@@ -106,8 +106,8 @@ export default {
     },
     getSunVector() {
       axios({
-        method: "GET",
-        url: "https://urban-insights-api.herokuapp.com/",
+        method: "post",
+        url: "https://urban-insights-api.herokuapp.com/getSunVector",
         headers: {
           "cache-control": "no-cache",
           "Content-Type": "application/json"
