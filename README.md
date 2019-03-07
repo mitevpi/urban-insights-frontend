@@ -2,7 +2,7 @@
 
 # Urban Insights
 
-[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights-sjgjw2iv1.now.sh/)
+[![Generic badge](https://img.shields.io/badge/Deployment-AWS-green.svg)](https://urban-insights-8sl8m3t8f.now.sh/)
 [![Generic badge](https://img.shields.io/badge/Testing-Glitch-green.svg)](https://github.com/mitevpi/urban-insights-frontend/wiki/Glitch)
 [![Generic badge](https://img.shields.io/badge/Backend-Heroku-green.svg)](https://urban-insights-api.herokuapp.com)
 
@@ -29,10 +29,6 @@ npm run build
 now
 ```
 
-## Native Mobile Builds
-
-This project is configured to build to native Android and iOS devices using [Capacitator](https://capacitor.ionicframework.com/docs/getting-started/with-ionic) through Ionic.
-
 ## Concept
 
 **Stack Diagram**
@@ -40,3 +36,5 @@ This project is configured to build to native Android and iOS devices using [Cap
 
 **Prototype**
 ![proto](/screenshots/app.png)
+
+![ui](/screenshots/ui01.gif) ![uiweb](/screenshots/ui02.gif)

@@ -6,7 +6,7 @@
     <main id="app">
       <v-container fluid>
         <v-fade-transition mode="out-in">
-          <router-view></router-view>
+          <router-view id="position"></router-view>
         </v-fade-transition>
       </v-container>
     </main>
@@ -34,5 +34,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+}
+
+#position {
+  margin-top: 3%;
 }
 </style>
